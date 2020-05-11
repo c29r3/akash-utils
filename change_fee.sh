@@ -1,5 +1,5 @@
 #!/bin/bash
-# require jq and bc
+# required jq and bc
 # apt install -y jq bc
 
 PWD="YOUR_PASS"
