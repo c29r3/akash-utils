@@ -1,4 +1,6 @@
 #!/bin/bash
+# require jq and bc
+# apt install -y jq bc
 
 PWD="YOUR_PASS"
 VALIDATOR_ADDR="akashvaloper..."
