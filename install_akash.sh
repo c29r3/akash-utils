@@ -4,7 +4,7 @@ apt install -y git jq
 cd /tmp/ && \
 wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz && \
 tar -C /usr/local -xzf go*.tar.gz;
-echo '\nexport PATH=/root/go/bin:$PATH
+echo  'export PATH=/root/go/bin:$PATH
 export GOROOT=/usr/local/go
 export GOPATH=/root/go
 export GO111MODULE=on 
