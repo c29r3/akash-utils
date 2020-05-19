@@ -9,7 +9,7 @@ export GOROOT=/usr/local/go
 export GOPATH=/root/go
 export GO111MODULE=on 
 export PATH=/root/go/bin:/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/usr/local/go/bin:/usr/local/go/bin:/root
-export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"\n' >> /root/.profile;
+export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"' >> /root/.profile;
 . /root/.profile
 
 cd ~
