@@ -11,7 +11,7 @@ echo -e "$WALLET_PWD\n$WALLET_PWD\n" | $BIN_FILE tx distribution withdraw-reward
 sleep 5
 
 # check current balance
-BALANCE=$($BIN_FILE query account $SELF_ADDR -o json | jq .value.coins[0].amount | tr -d '"')
+BALANCE=$($BIN_FILE query account $SELF_ADDR -o json | jq -r .value.coins[0].amount)
 echo CURRENT BALANCE IS: $BALANCE
 
 if (( $BALANCE >=  2 ));then
