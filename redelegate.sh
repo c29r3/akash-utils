@@ -14,6 +14,8 @@ sleep 5
 BALANCE=$($BIN_FILE query account $SELF_ADDR -o json | jq -r .value.coins[0].amount)
 echo CURRENT BALANCE IS: $BALANCE
 
+REWARD=$(( $BALANCE - 100000 ))
+
 if (( $BALANCE >=  2 ));then
     echo "Let's delegate $REWARD of REWARD tokens to $SELF_ADDR"
     # delegate balance
