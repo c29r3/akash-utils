@@ -6,9 +6,10 @@ wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz && \
 tar -C /usr/local -xzf go*.tar.gz;
 echo -e '\nexport PATH=/root/go/bin:$PATH
 export GOROOT=/usr/local/go
-export GOPATH=/root/go
-export GO111MODULE=on' >> /root/.profile;
-. /root/.profile
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> /root/.profile;
+. /root/.bashrc
 
 cd ~
 git clone https://github.com/ovrclk/akash.git && \
