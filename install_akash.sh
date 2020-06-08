@@ -8,8 +8,8 @@ echo -e '\nexport PATH=/root/go/bin:$PATH
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GO111MODULE=on
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> /root/.profile;
-. /root/.bashrc
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> $HOME/.bashrc;
+. $HOME/.bashrc
 
 cd ~
 git clone https://github.com/ovrclk/akash.git && \
