@@ -14,6 +14,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> $HOME/.bashrc;
 cd ~
 git clone https://github.com/ovrclk/akash.git && \
 cd akash && \
-git checkout v0.6.1 && \
+git checkout v0.7.4 && \
 make deps-install && \
 make install
