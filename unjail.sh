@@ -3,10 +3,10 @@
 WALLET_NAME=akash
 CHAIN_ID="akash-edgenet-1"
 CLI="/usr/local/bin/akash"
-RPC="http://localhost:29657"
+RPC="http://localhost:26657"
 COIN="uakt"
-PWD=$1
-SELF_ADDR=$(echo -e "$PWD\n" | akash keys list | grep "address:" | awk '{print $2}')
+PSWD=$1
+SELF_ADDR=$(echo -e "$PSWD\n" | akash keys list | grep "address:" | awk '{print $2}')
 
 while true; 
 do 
@@ -15,7 +15,7 @@ do
     echo "Status $STATUS"
     if [[ "$STATUS" == "true" ]]; then
         echo "UNJAIL"
-        echo -e "$PWD\n" | $CLI tx slashing unjail --from $WALLET_NAME --node $RPC --gas-adjustment="1.5" --gas="200000" --fees 5000$COIN --chain-id=$CHAIN_ID -y
+        echo -e "$PSWD\n" | $CLI tx slashing unjail --from $WALLET_NAME --node $RPC --gas-adjustment="1.5" --gas="200000" --fees 5000$COIN --chain-id=$CHAIN_>
     fi
     sleep 300
 done
