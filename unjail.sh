@@ -1,21 +1,21 @@
 #!/bin/bash
 
 WALLET_NAME=akash
-CHAIN_ID="akashnet-1"
-CLI="/usr/local/bin/akashctl"
+CHAIN_ID="akashnet-2"
+CLI="/usr/local/bin/akash"
 RPC="http://localhost:26657"
 COIN="uakt"
-TG_TOKEN=""
-CHAT_ID="11111111"
-PASSWD="PSWD"
+TG_TOKEN="TG_TOKEN"
+CHAT_ID="USER_TG_ID"
+PASSWD="WALLET_PASSWORD"
 SUBJECT="AKASH"
 
 SELF_ADDR=$(echo -e "$PASSWD\n" | akashctl keys list -o json | jq -r .[0].address)
 
 while true; 
 do 
-    OPERATOR=$($CLI q staking delegations -o json --node $RPC --chain-id $CHAIN_ID $SELF_ADDR | jq -r .[0].validator_address)
-    STATUS=$($CLI query staking validator $OPERATOR --chain-id=$CHAIN_ID --node $RPC -o json --trust-node | jq -r .jailed)
+    OPERATOR=$($CLI q staking delegations -o json --node $RPC --chain-id $CHAIN_ID $SELF_ADDR | jq -r .delegation_responses[0].delegation.validator_address)
+    STATUS=$($CLI query staking validator $OPERATOR --chain-id=$CHAIN_ID --node $RPC -o json | jq -r .jailed)
     echo "Status $STATUS"
     if [[ "$STATUS" == "true" ]]; then
         echo "UNJAIL"
