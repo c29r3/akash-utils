@@ -23,7 +23,7 @@ echo "init node"
 $BIN_PATH init c29r3 --chain-id $CHAIN_ID
 
 echo "download configs"
-curl -s $CHAIN_ID > $HOME/.akash/config/genesis.json
+curl -s $GENESIS_URL > $HOME/.akash/config/genesis.json
 curl -s $CONFIG_TOML > $HOME/.akash/config/config.toml
 curl -s $APP_TOML > $HOME/.akash/config/app.toml
 
