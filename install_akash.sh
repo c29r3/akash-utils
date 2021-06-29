@@ -38,7 +38,7 @@ mkdir -p ~/.akash/data
 cd ~/.akash/data
 
 echo "random wait"
-SLEEP_TIME=$(shuf -i 10-300 -n 1)
+SLEEP_TIME=$(shuf -i 10-120 -n 1)
 echo $SLEEP_TIME
 sleep $SLEEP_TIME
 SNAP_NAME=$(curl -s http://135.181.60.250/akash/ | egrep -o ">$CHAIN_ID.*tar" | tr -d ">"); \
