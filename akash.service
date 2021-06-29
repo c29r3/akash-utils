@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 User=root
-ExecStart=/usr/local/bin/akash start --grpc.address 0.0.0.0:9110
+ExecStart=/usr/local/bin/akash start
 Restart=always
 RestartSec=3
 LimitNOFILE=25000
