@@ -37,7 +37,9 @@ rm -rf ~/.akash/data
 mkdir -p ~/.akash/data
 cd ~/.akash/data
 # random wait
-sleep $(shuf -i 10-300 -n 1)
+SLEEP_TIME=$(shuf -i 10-300 -n 1)
+echo $SLEEP_TIME
+sleep $SLEEP_TIME
 SNAP_NAME=$(curl -s http://135.181.60.250/akash/ | egrep -o ">$CHAIN_ID.*tar" | tr -d ">"); \
 wget -O - http://135.181.60.250/akash/${SNAP_NAME} | tar xf -
 
