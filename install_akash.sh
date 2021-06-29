@@ -11,7 +11,7 @@ GENESIS_URL="https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis
 
 # install requirements
 sudo apt update
-sudo apt-get install -y jq curl wget htop
+sudo apt-get install -y jq curl wget htop pv bc
 
 # install binary
 cd /tmp
