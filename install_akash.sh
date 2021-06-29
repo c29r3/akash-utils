@@ -41,5 +41,9 @@ sleep $(shuf -i 10-300 -n 1)
 SNAP_NAME=$(curl -s http://135.181.60.250/akash/ | egrep -o ">$CHAIN_ID.*tar" | tr -d ">"); \
 wget -O - http://135.181.60.250/akash/${SNAP_NAME} | tar xf -
 
+# ufw rules
+sudo ufw allow 28957,28959,28956,1518,9890/tcp comment "allow akash public nodes"
+
 # start service
-systemctl start akash.service
+sudo systemctl start akash.service
+
