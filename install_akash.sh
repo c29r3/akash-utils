@@ -15,6 +15,7 @@ sudo apt-get install -y jq curl wget htop pv bc
 
 # install binary
 cd /tmp
+rm akash*deb
 wget $DEB_FILE &>/dev/null
 dpkg -i akash*deb
 $BIN_PATH version
