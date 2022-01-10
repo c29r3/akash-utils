@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL=https://github.com/ovrclk/akash/releases/download/v0.14.1/akash_0.14.1_linux_amd64.zip
+URL=https://github.com/ovrclk/akash/releases/download/v0.14.0/akash_0.14.0_linux_amd64.zip
 BIN_PATH=$HOME/go/bin/
 BIN_NAME=akash
 
