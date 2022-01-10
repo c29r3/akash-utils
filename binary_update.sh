@@ -1,6 +1,12 @@
 #!/bin/bash
 
-URL=https://github.com/ovrclk/akash/releases/download/v0.14.0/akash_0.14.0_linux_amd64.zip
+VERSION=$1
+if [ "$VERSION" == "" ]; then
+    VERSION="0.14.0"
+fi
+echo $GO_VERSION
+
+URL=https://github.com/ovrclk/akash/releases/download/v${VERSION}/akash_${VERSION}_linux_amd64.zip
 BIN_PATH=$HOME/go/bin/
 BIN_NAME=akash
 
