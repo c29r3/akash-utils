@@ -18,7 +18,7 @@ cd ${BIN_PATH}
 
 rm ${BIN_NAME}
 
-wget ${URL}
+wget ${URL} &>/dev/null
 
 unzip *zip
 
