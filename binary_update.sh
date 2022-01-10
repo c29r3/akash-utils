@@ -7,7 +7,7 @@ fi
 echo $GO_VERSION
 
 URL=https://github.com/ovrclk/akash/releases/download/v${VERSION}/akash_${VERSION}_linux_amd64.zip
-BIN_PATH=$HOME/go/bin/
+BIN_PATH="/usr/local/bin/akash"
 BIN_NAME=akash
 
 sudo systemctl stop ${BIN_NAME}
