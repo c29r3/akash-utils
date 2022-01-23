@@ -10,7 +10,7 @@ APP_TOML="https://raw.githubusercontent.com/c29r3/akash-utils/master/app.toml"
 GENESIS_URL="https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json"
 
 # install requirements
-sudo apt update
+sudo apt-get update
 sudo apt-get install -y jq curl wget htop pv bc
 
 # install binary
