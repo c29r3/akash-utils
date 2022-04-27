@@ -17,6 +17,7 @@ sudo apt-get update && sudo apt-get install -y unzip
 cd ${BIN_PATH}
 
 rm ${BIN_NAME}
+rm /usr/local/bin/akash ~/go/bin/akash
 
 wget ${URL} &>/dev/null
 
@@ -27,6 +28,8 @@ mv ${BIN_NAME}_*/akash .
 chmod 700 akash
 
 rm -rf ${BIN_NAME}_*
+
+ln -s /usr/local/bin/akash ~/go/bin/akash
 
 sudo systemctl start ${BIN_NAME}
 
