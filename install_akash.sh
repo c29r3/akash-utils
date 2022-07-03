@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BINARY_VERSION=$(curl -s https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt)
-DEB_FILE="https://github.com/ovrclk/akash/releases/download/v$BINARY_VERSION/akash_0.12.1_linux_amd64.deb"
+DEB_FILE="https://github.com/ovrclk/akash/releases/download/v$BINARY_VERSION/akash_$BINARY_VERSION_linux_amd64.deb"
 BIN_PATH="/usr/local/bin/akash"
 CHAIN_ID=$(curl -s https://raw.githubusercontent.com/ovrclk/net/master/mainnet/chain-id.txt)
 SERVICE_FILE="https://raw.githubusercontent.com/c29r3/akash-utils/master/akash.service"
