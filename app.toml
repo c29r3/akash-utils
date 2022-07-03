@@ -123,7 +123,7 @@ rpc-write-timeout = 0
 rpc-max-body-bytes = 1000000
 
 # EnableUnsafeCORS defines if CORS should be enabled (unsafe - use it at your own risk).
-enabled-unsafe-cors = false
+enabled-unsafe-cors = true
 
 ###############################################################################
 ###                           gRPC Configuration                            ###
@@ -135,7 +135,7 @@ enabled-unsafe-cors = false
 enable = true
 
 # Address defines the gRPC server address to bind to.
-address = "0.0.0.0:9890"
+address = "0.0.0.0:3521"
 
 ###############################################################################
 ###                        State Sync Configuration                         ###
