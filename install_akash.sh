@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BINARY_VERSION=$(curl -s https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt)
-DEB_FILE="https://github.com/ovrclk/akash/releases/download/v$BINARY_VERSION/akash_$BINARY_VERSION_linux_amd64.deb"
+DEB_FILE="https://github.com/ovrclk/akash/releases/download/v$BINARY_VERSION/akash_${BINARY_VERSION}_linux_amd64.deb"
 BIN_PATH="/usr/local/bin/akash"
 CHAIN_ID=$(curl -s https://raw.githubusercontent.com/ovrclk/net/master/mainnet/chain-id.txt)
 SERVICE_FILE="https://raw.githubusercontent.com/c29r3/akash-utils/master/akash.service"
@@ -38,16 +38,12 @@ rm -rf ~/.akash/data
 mkdir -p ~/.akash/data
 cd ~/.akash/data
 
-echo "random wait"
-SLEEP_TIME=$(shuf -i 10-120 -n 1)
-echo $SLEEP_TIME
-sleep $SLEEP_TIME
-SNAP_NAME=$(curl -s http://135.181.60.250/akash/ | egrep -o ">$CHAIN_ID.*tar" | tr -d ">"); \
-wget -O - http://135.181.60.250/akash/${SNAP_NAME} | tar xf -
+RANDOM_IP=$(curl -s https://gist.githubusercontent.com/c29r3/1a8a951008b19aaa424d63d15cf528d8/raw/910b3ab34bcceb2b3e9bca0765a92461bafc53f8/akash-snapshot-mirrors | shuf | head -n1); \
+SNAP_NAME=$(curl -s $RANDOM_IP/akash/ | egrep -o ">akashnet-2.*tar" | tr -d ">"); \
+wget -O - $RANDOM_IP/akash/${SNAP_NAME} | tar xf -
 
 #echo "ufw rules"
 #sudo ufw allow 28957,28959,28956,1518,9890/tcp comment "allow akash public nodes"
 
 echo "start service"
 sudo systemctl start akash.service
-
